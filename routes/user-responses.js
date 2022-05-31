@@ -8,6 +8,8 @@ const routes = express.Router();
 // This will help us connect to the database
 const dbo = require("../db/conn");
 
+const test = 1;
+
 // This help convert the id from string to ObjectId for the _id.
 const ObjectId = require("mongodb").ObjectId;
 
@@ -39,7 +41,7 @@ routes.route("/user-responses/add").post(async (req, response) => {
     ).data.choices.map((choice) => choice.text);
 
     console.log(responses);
-   
+
     response.json({ responses: responses, _id: res.ops[0]._id });
   });
 });

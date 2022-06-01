@@ -4,7 +4,11 @@ const cookieParser = require("cookie-parser");
 const cors = require("cors");
 require("dotenv").config({ path: "./config.env" });
 const port = process.env.PORT || 5001;
-app.use(cors());
+app.use(
+  cors({
+    origin: "https://gpt3chatbot1.surge.sh",
+  })
+);
 app.use(cookieParser());
 app.use(express.json());
 app.use(require("./routes/user-responses"));

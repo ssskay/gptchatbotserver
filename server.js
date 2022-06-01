@@ -7,6 +7,7 @@ const port = process.env.PORT || 5001;
 app.use(
   cors({
     origin: "https://gpt3chatbot1.surge.sh",
+    credentials: true,
   })
 );
 app.use(cookieParser());
